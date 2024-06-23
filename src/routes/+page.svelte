@@ -1,7 +1,15 @@
 <script lang="ts">
     import "../app.css"
+    import { route } from "../stores/store"
+    import Greet from "./logging/Greet.svelte";
+  import Login from "./logging/Login.svelte";
+  import SignUp from "./logging/SignUp.svelte";
 </script>
 
-<div class="bg-neutral-800 min-h-screen">
-    <h2>Hello world</h2>
-</div>
+{#if $route.path == "/"}
+<Greet />
+{:else if $route.path == "/login"}
+<Login />
+{:else if $route.path == "/signup"}
+<SignUp />
+{/if}

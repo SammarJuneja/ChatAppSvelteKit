@@ -1,6 +1,7 @@
 <script lang="ts">
   import Header from "../../components/+Header.svelte";
   import OpenChat from "../../ui/images/OpenChat.png";
+  import "../../app.css"
 </script>
 
 <div class="min-h-screen bg-app-bg">

@@ -1,6 +1,7 @@
 <script lang="ts">
     import Icon from "../../ui/Icon.svelte";
     import OpenChat from "../../ui/images/OpenChat.png";
+    import "../../app.css"
     
     // export let firstUser: string = "";
     // export let secondUser: string = "";

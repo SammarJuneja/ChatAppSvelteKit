@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "../../app.css"
 </script>
 
 <div class="bg-app-bg min-h-screen grid items-center justify-center">

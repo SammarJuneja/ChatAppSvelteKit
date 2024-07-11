@@ -1,9 +1,9 @@
 <script lang="ts">
-    import Icon from "./ui/Icon.svelte";
-    import OpenChat from "./ui/images/OpenChat.png"
+    import Icon from "../../ui/Icon.svelte";
+    import OpenChat from "../../ui/images/OpenChat.png";
     
-    export let firstUser: string = "";
-    export let secondUser: string = "";
+    // export let firstUser: string = "";
+    // export let secondUser: string = "";
 </script>
 
 <div class="bg-app-bg min-h-screen">

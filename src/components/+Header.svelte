@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Icon from "../routes/app/ui/Icon.svelte";
-  import OpenChat from "../routes/app/ui/images/OpenChat.png"
+  import Icon from "../ui/Icon.svelte";
+  import OpenChat from "../ui/images/OpenChat.png"
 </script>
 
 <header class="p-3 bg-black w-full">

@@ -1,5 +1,4 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import prisma from '$lib/prisma';
 import { generateToken } from '$lib/auth';
 import bcrypt from 'bcrypt';
 

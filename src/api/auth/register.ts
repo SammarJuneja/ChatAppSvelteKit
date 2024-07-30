@@ -1,5 +1,4 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import prisma from '$lib/prisma';
 import bcrypt from 'bcrypt';
 
 type RequestBody = {

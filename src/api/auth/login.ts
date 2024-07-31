@@ -1,21 +1,28 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import { generateToken } from '$lib/auth';
-import bcrypt from 'bcrypt';
+import { signAccessToken, signRefreshToken } from '$lib/jwt';
+import mongoose from 'mongoose';
+import User from '$lib/modals/user';
 
-// export const post: RequestHandler = async ({ request }) => {
-//   const { email, password } = await request.json();
-//   const user = await prisma.user.findUnique({ where: { email } });
+export const POST: RequestHandler = async ({ request}) => {
+    const { email, password } = await request.json();
 
-//   if (user && bcrypt.compareSync(password, user.password)) {
-//     const token = generateToken(user);
-//     return {
-//       status: 200,
-//       body: { token }
-//     };
-//   }
+    if (!email && !password) {
+        return {
+            "status": 400,
+            "error": "You didn\'t filled email or password"
+        }
+    }
 
-//   return {
-//     status: 401,
-//     body: { error: 'Invalid email or password' }
-//   };
-// };
+    const user = User.findOne({
+        "email": email
+    });
+
+    if (!user) {
+        return {
+            "status": 404,
+            "error": "Username with that email was not found"
+        }
+    }
+
+
+}

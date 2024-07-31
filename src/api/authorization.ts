@@ -1,4 +1,4 @@
-import { Jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 export const authentication = (async() => {
 

@@ -1,7 +1,7 @@
-import { signAccessToken, signRefreshToken } from '$lib/jwt';
-import User from '$lib/modals/user';
-import { type RequestHandler, json } from '@sveltejs/kit';
-import bcrypt from 'bcrypt';
+import { signAccessToken, signRefreshToken } from "../../stores/store";
+import User from "$lib/modals/user";
+import { type RequestHandler, json } from "@sveltejs/kit";
+import bcrypt from "bcrypt";
 
 export const POST: RequestHandler = async ({ request }) => {
   const { username, email, password } = await request.json();

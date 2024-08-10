@@ -12,7 +12,7 @@ export const authentication: RequestHandler = async (event) => {
         });
     }
 
-    const token = authHeader.split(" ")[1];
+    const token = authHeader?.replace("Bearer ", "");
 
     if (!token) {
         return json({

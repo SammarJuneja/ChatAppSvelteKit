@@ -1,4 +1,4 @@
-import { signAccessToken, signRefreshToken } from "../../stores/store";
+import { signAccessToken, signRefreshToken } from "../../../stores/store";
 import User from "$lib/modals/user";
 import { type RequestHandler, json } from "@sveltejs/kit";
 import bcrypt from "bcrypt";

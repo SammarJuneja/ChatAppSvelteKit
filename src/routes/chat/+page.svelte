@@ -2,6 +2,9 @@
     import Icon from "../../ui/Icon.svelte";
     import OpenChat from "../../ui/images/OpenChat.png";
     import "../../app.css"
+    import { Socket } from "socket.io";
+
+    let message: any = "";
     
     // export let firstUser: string = "";
     // export let secondUser: string = "";
@@ -26,7 +29,7 @@
         <!--  bottom bar -->
         <nav class="fixed bottom-0 border-t w-full">
             <div class="flex gap-2 m-3 w-full">
-                <input class="rounded-full w-full text-white pl-3 outline-none bg-login-button" type="text" placeholder="Type your message here...">
+                <input bind:value={message} class="rounded-full w-full text-white pl-3 outline-none bg-login-button" type="text" placeholder="Type your message here...">
                 <button class="p-1.5 bg-signup-button rounded-full">
                     <Icon icon="attachment" size="20px" color="white"/>
                 </button>

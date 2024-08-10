@@ -4,11 +4,11 @@ export const config: any = {
   mongo_uri: process.env.MONGO_URI,
   jwtAccess: {
     secret: process.env.ACCESS_SECRET,
-    expiresIn: "1h",
+    expiresIn: "15m",
   },
   jwtRefresh: {
     secret: process.env.REFRESH_TOKEN,
-    expiresin: "30d",
+    expiresin: "7d",
   },
   hashing: {
     saltRounds: 10,

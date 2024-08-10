@@ -1,3 +1,4 @@
+import { signAccessToken, signRefreshToken } from '$lib/jwt';
 import User from '$lib/modals/user';
 import { type RequestHandler, json } from '@sveltejs/kit';
 import bcrypt from 'bcrypt';
@@ -45,15 +46,20 @@ export const POST: RequestHandler = async ({ request }) => {
   
   const hashedPassword = bcrypt.hashSync(password, 10);
 
-  await User.create({
+  const user = await User.create({
       username,
       email,
       password: hashedPassword
   });
 
+  const accessToken = signAccessToken(user);
+  const refreshToken = signRefreshToken(user);
+
   return json({
     "status": 200,
-    "message": `Your account is successfully created by username ${username}`
+    "message": `Your account is successfully created by username ${username}`,
+    "accessToken": accessToken,
+    "refreshToken": refreshToken
   });
 };
 

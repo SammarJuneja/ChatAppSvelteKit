@@ -1,7 +1,8 @@
 import jwt from "jsonwebtoken";
+import { config } from "./config";
 
-const JWT_ACCESS_TOKEN = process.env.JWT_ACCESS_SECRET as string;
-const JWT_REFRESH_TOKEN = process.env.JWT_REFRESH_SECRET as string;
+const JWT_ACCESS_TOKEN = config.jwtAccess.secret as string;
+const JWT_REFRESH_TOKEN = config.jwtRefresh.secret as string;
 
 export const signAccessToken = (payload: object, expiresIn: string | number = "15m") => {
     return jwt.sign(payload, JWT_ACCESS_TOKEN, { expiresIn });

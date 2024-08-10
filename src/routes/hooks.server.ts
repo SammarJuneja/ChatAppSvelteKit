@@ -1,6 +1,4 @@
-import jwt from "jsonwebtoken";
 import { type RequestHandler, json } from "@sveltejs/kit";
-import { config } from "../../config";
 import { verifyRefreshToken } from "../stores/store";
 import User from "$lib/modals/user";
 

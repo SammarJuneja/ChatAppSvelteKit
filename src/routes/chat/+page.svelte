@@ -2,12 +2,10 @@
     import Icon from "../../ui/Icon.svelte";
     import OpenChat from "../../ui/images/OpenChat.png";
     import "../../app.css"
-    // import { Socket } from "socket.io";
 
     let message: any = "";
-    
-    // export let firstUser: string = "";
-    // export let secondUser: string = "";
+    let firstUser: string = "";
+    let secondUser: string = "";
 </script>
 
 <div class="bg-app-bg min-h-screen">
@@ -17,15 +15,19 @@
             <img src={OpenChat} class="rounded-full border" width="35px" alt="Open Chat">
             <h2>Test1</h2>
         </header>
-        <!-- main -->
-        <!-- <div class="flex">
-            <div class="w-full m-5 bg-signup-button text-white p-1">
-                <h2>hello</h2>
+
+        <!-- main chat -->
+        <div class="grid justify-start">
+            <div class="w-40 m-5 bg-signup-button text-white p-1 rounded-lg break-all">
+                <h2>Hello</h2>
             </div>
-            <div class="w-full m-5 bg-signup-button text-white p-1">
-                <h2>hello</h2>
+        </div>
+        <div class="grid justify-end">
+            <div class="w-40 mx-5 bg-login-button text-white p-1 rounded-lg">
+                <h2>Hey</h2>
             </div>
-        </div> -->
+        </div>
+        
         <!--  bottom bar -->
         <nav class="fixed bottom-0 border-t w-full">
             <div class="flex gap-2 m-3 w-full">

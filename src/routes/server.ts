@@ -1,12 +1,14 @@
 import http from "http";
 const express = require("express");
-import socketjs from "$lib/socket";
+import socketConnection from "$lib/socket";
+import { connectDB } from "../stores/store";
 
 const app = express();
 const server = http.createServer(app);
 
-socketjs(server);
+socketConnection(server);
 
 server.listen(4000, () => {
-    console.log("running on 4000")
+    console.log("Server running on 4000");
+    connectDB();
 })

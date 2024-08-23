@@ -2,7 +2,7 @@
     import Icon from "../../ui/Icon.svelte";
     import OpenChat from "../../ui/images/OpenChat.png";
     import "../../app.css"
-    import { Socket } from "socket.io";
+    // import { Socket } from "socket.io";
 
     let message: any = "";
     

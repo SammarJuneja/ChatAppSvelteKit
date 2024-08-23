@@ -1,17 +1,18 @@
 import { Server } from "socket.io";
-import http from "http";
 
-const server = http.createServer();
+export default function socketjs(server: any) {
+    const io = new Server(server);
 
-const io = new Server(server, {
-    cors: {
-        origin: "*",
-        methods: ["GET", "POST"],
-    },
-});
+    io.on("connection", (socket) => {
+        let username = `User ${Math.round(Math.random() * 9999)}`
+        socket.emit("name", `${username} joined`);
 
-io.on("connection", (socket) => {
-    socket.on("message", (data) => {
-
+        socket.on("message", (message) => {
+            io.emit("message", {
+                from: username,
+                message: message,
+                time: new Date().toLocaleString()
+            });
+        });
     });
-});
+}

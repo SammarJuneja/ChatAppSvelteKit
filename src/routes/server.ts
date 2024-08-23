@@ -1,5 +1,12 @@
-import { createServer } from "http";
-import app from "../app"
-const socketServer = "$lib/socket.ts"
+import http from "http";
+const express = require("express");
+import socketjs from "$lib/socket";
 
-const server = createServer(app);
+const app = express();
+const server = http.createServer(app);
+
+socketjs(server);
+
+server.listen(4000, () => {
+    console.log("running on 4000")
+})

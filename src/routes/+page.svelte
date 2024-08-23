@@ -1,5 +1,14 @@
 <script>
+    import { onMount } from "svelte";
     import "../app.css"
+    import { io } from "$lib/socketClient";
+    let username = ""
+
+    onMount(() => {
+        io.on("name", (name) => {
+            console.log(`${name} just opened the app`);
+        });
+    })
 </script>
 
 <div class="bg-app-bg min-h-screen grid justify-center items-center">

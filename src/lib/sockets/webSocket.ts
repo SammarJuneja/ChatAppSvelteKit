@@ -1,8 +1,8 @@
-import socketjs from "./socket";
+import socketConnection from "./socket";
 
 export const websocket = {
     name: "webSocket",
     configureServer(server: any) {
-        socketjs(server.httpServer);
+        socketConnection(server.httpServer);
     }
 }

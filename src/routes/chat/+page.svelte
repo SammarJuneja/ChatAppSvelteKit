@@ -1,6 +1,6 @@
 <script lang="ts">
     import Icon from "../../ui/Icon.svelte";
-    import OpenChat from "../../ui/images/OpenChat.png";
+    import OpenChat from "../../ui/images";
     import "../../app.css"
 
     let message: any = "";

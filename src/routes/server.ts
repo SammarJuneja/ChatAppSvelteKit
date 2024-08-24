@@ -1,6 +1,6 @@
 import http from "http";
 const express = require("express");
-import socketConnection from "$lib/socket";
+import socketConnection from "$lib/sockets/socket";
 import { connectDB } from "../stores/store";
 
 const app = express();

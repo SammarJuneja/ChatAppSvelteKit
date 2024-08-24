@@ -43,8 +43,8 @@ exports.login = async (req: any, res: any) => {
 
 exports.register = async (req: any, res: any) => {
     const { username, email, password } = req.body;
-    const emailRegex: any = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-    const passRegex: any = "^(?=.*[a-zA-Z])(?=.*\d).{8}$"
+    const emailRegex: any = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+    const passRegex: any = "^(?=.*[a-zA-Z])(?=.*\d).{8}$";
   
     if (!username || !email || !password) {
       res.status(500).json({

@@ -1,7 +1,7 @@
 <script lang="ts">
     import Icon from "../../ui/Icon.svelte";
-    import OpenChat from "../../ui/images";
-    import "../../app.css"
+    import OpenChat from "$lib/images/OpenChat.png";
+    import "../../app.css";
 
     let message: any = "";
     let firstUser: string = "";
@@ -12,7 +12,7 @@
     <div>
         <!-- header -->
         <header class="bg-black gap-2 flex items-center text-white text-lg p-3">
-            <img src={OpenChat} class="rounded-full border" width="35px" alt="Open Chat">
+            <!-- <img src={OpenChat} class="rounded-full border" width="35px" alt="Open Chat"> -->
             <h2>Test1</h2>
         </header>
 

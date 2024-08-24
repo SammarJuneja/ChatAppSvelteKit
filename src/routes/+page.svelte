@@ -1,8 +1,8 @@
 <script>
     import { onMount } from "svelte";
-    import "../app.css"
+    import "../app.css";
     import { io } from "$lib/socketClient";
-    let username = ""
+    let username = "";
 
     onMount(() => {
         io.on("name", (name) => {

@@ -1,7 +1,7 @@
 <script lang="ts">
     import Icon from "../../ui/Icon.svelte";
-    import OpenChat from "$lib/images/OpenChat.png";
     import "../../app.css";
+    const logo = "https://media.discordapp.net/attachments/916361716965707836/1277165337825251338/OpenChat.png?ex=66cc2c69&is=66cadae9&hm=7e62f9d41dbfb54c7857ee8826c900759630569fb5953adca4762a9480b90712&";
 
     let message: any = "";
     let firstUser: string = "";
@@ -12,7 +12,7 @@
     <div>
         <!-- header -->
         <header class="bg-black gap-2 flex items-center text-white text-lg p-3">
-            <!-- <img src={OpenChat} class="rounded-full border" width="35px" alt="Open Chat"> -->
+            <img src={logo} class="rounded-full border" width="35px" alt="Open Chat">
             <h2>Test1</h2>
         </header>
 
@@ -47,14 +47,14 @@
                     <Icon icon="notification" size="20px" color="white"/>
                 </button>
                 <div class="bg-login-button flex gap-2 overflow-x-auto p-1 w-full rounded-t-md">
-                    <img src={OpenChat} class="rounded-full border" width="35px" alt="Open Chat">
-                    <img src={OpenChat} class="rounded-full border" width="35px" alt="Open Chat">
-                    <img src={OpenChat} class="rounded-full border" width="35px" alt="Open Chat">
-                    <img src={OpenChat} class="rounded-full border" width="35px" alt="Open Chat">
-                    <img src={OpenChat} class="rounded-full border" width="35px" alt="Open Chat">
-                    <img src={OpenChat} class="rounded-full border" width="35px" alt="Open Chat">
-                    <img src={OpenChat} class="rounded-full border" width="35px" alt="Open Chat">
-                    <img src={OpenChat} class="rounded-full border" width="35px" alt="Open Chat">
+                    <img src={logo} class="rounded-full border" width="35px" alt="Open Chat">
+                    <img src={logo} class="rounded-full border" width="35px" alt="Open Chat">
+                    <img src={logo} class="rounded-full border" width="35px" alt="Open Chat">
+                    <img src={logo} class="rounded-full border" width="35px" alt="Open Chat">
+                    <img src={logo} class="rounded-full border" width="35px" alt="Open Chat">
+                    <img src={logo} class="rounded-full border" width="35px" alt="Open Chat">
+                    <img src={logo} class="rounded-full border" width="35px" alt="Open Chat">
+                    <img src={logo} class="rounded-full border" width="35px" alt="Open Chat">
                 </div>
                 <button class="p-1 bg-signup-button rounded-full">
                     <Icon icon="setting" size="20px" color="white"/>

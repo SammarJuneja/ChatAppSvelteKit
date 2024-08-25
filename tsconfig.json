@@ -13,6 +13,6 @@
     "jsx": "preserve",
     "types": ["svelte"]
   },
-  "include": ["src/**/*.ts", "src/**/*.svelte", "config.ts"],
+  "include": ["src/**/*.ts", "src/**/*.svelte", "config.js"],
   "exclude": ["node_modules"]
 }

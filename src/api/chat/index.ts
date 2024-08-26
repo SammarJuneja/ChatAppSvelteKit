@@ -15,7 +15,7 @@ const { getUserChats, startChat, sendMessage, editMessage, addReaction, deleteMe
 
 router.get(
   "/chat/:userId", 
-  authMiddleware,
+//   authMiddleware,
   getUserChats
 );
 

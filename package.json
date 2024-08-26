@@ -44,6 +44,7 @@
 	"type": "module",
 	"dependencies": {
 		"@prisma/client": "^5.15.1",
+		"@sveltejs/adapter-node": "^5.2.2",
 		"@types/bcrypt": "^5.0.2",
 		"@types/jsonwebtoken": "^9.0.6",
 		"bcrypt": "^5.1.1",

@@ -2,11 +2,21 @@
     import { onMount } from "svelte";
     import "../app.css";
     import { io } from "../lib/sockets/socketClient";
-    let username = "";
+
+    const apiUrl = "http://localhost:4000";
+    let username = "helllo";
+
+    // let token = localStorage.getItem("token");
+
+    async function user() {
+        const response = await fetch(`${apiUrl}/`, {
+            
+        });
+    }
 
     onMount(() => {
-        io.on("name", (name) => {
-            console.log(`${name} just opened the app`);
+        io.on("join", () => {
+            console.log(`${username} just opened the app`);
         });
     })
 </script>

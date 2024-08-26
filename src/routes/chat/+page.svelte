@@ -18,12 +18,12 @@
 
         <!-- main chat -->
         <div class="grid justify-start">
-            <div class="w-40 m-5 bg-signup-button text-white p-1 rounded-lg break-all">
+            <div class="w-auto max-w-40 px-2 m-5 bg-signup-button text-white p-1 rounded-lg break-all">
                 <h2>Hello</h2>
             </div>
         </div>
         <div class="grid justify-end">
-            <div class="w-40 mx-5 bg-login-button text-white p-1 rounded-lg">
+            <div class="w-auto max-w-40 px-2 mx-5 bg-login-button text-white p-1 rounded-lg break-all">
                 <h2>Hey</h2>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { config } from "../../../config";
+import { important } from "../stores/store"
 import User from "$lib/modals/user";
 
 const authMiddleware = async (req: any, res: any, next: any) => {
@@ -16,7 +16,7 @@ const authMiddleware = async (req: any, res: any, next: any) => {
     }
 
     try {
-        jwt.verify(token, config.jwtAccess, async (err: any, tok: any) => {
+        jwt.verify(token, important.jwtAccess, async (err: any, tok: any) => {
             if (err) {
                 return res.status(401).json({ "error": "Invalid or expired token" });
             }

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import OpenChat from "../ui/images/OpenChat.png"
+// import OpenChat from "../ui/images/OpenChat.png"
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
   },
   avatar: {
     type: String,
-    default: OpenChat,
+    default: "OpenChat",
   },
   email: {
     type: String,

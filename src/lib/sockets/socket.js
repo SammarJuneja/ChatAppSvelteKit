@@ -1,6 +1,6 @@
 import { Server } from "socket.io";
 
-export default function socketConnection(server: any) {
+function socketConnection(server) {
     const io = new Server(server);
 
     io.on("connection", (socket) => {
@@ -22,3 +22,5 @@ export default function socketConnection(server: any) {
         });
     });
 }
+
+module.exports = socketConnection;

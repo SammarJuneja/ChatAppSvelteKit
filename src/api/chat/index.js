@@ -1,14 +1,14 @@
-import Chat from "$lib/modals/chat";
-import Message from "$lib/modals/message";
-import User from "$lib/modals/user";
-const { authMiddleware } = require("../middleware");
+const Chat = require("$lib/modals/chat");
+const Message = require("$lib/modals/message");
+const User = require("$lib/modals/user");
+const { authMiddleware } = require("../middleware.js");
 
 const { Router } = require("express");
 const { body } = require('express-validator');
 
 const router = Router();
 
-const { getUserChats, startChat, sendMessage, editMessage, addReaction, deleteMessage } = require('../Controllers/chatController.js');
+const { getUserChats, startChat, sendMessage, editMessage, addReaction, deleteMessage } = require('../controllers/chatController.js');
 
 // chat id 665c52fa0e66697107164be2
 // user id 665c52570e66697107164bda
@@ -24,7 +24,7 @@ router.post(
   [
     body("userid")
     .notEmpty().withMessage("User was not found")
-    .custom(async (userid: any) => {
+    .custom(async (userid) => {
       const userGet = await User.findOne({
         _id: userid
       });
@@ -43,7 +43,7 @@ router.post(
     body("chatId")
     .trim().escape()
     .notEmpty().withMessage("ChatId was not provided")
-    .custom(async (chatId: any) => {
+    .custom(async (chatId) => {
       const chatGet = await Chat.findOne({
         _id: chatId
       });
@@ -65,7 +65,7 @@ router.put(
     body("messageId")
     .trim().escape()
     .notEmpty().withMessage("MessageId was not provided")
-    .custom(async (messageId: any) => {
+    .custom(async (messageId) => {
         const messageGet = await Message.findOne({
             _id: messageId
         });
@@ -87,7 +87,7 @@ router.put(
     body("messageId")
     .trim().escape()
     .notEmpty().withMessage("MessageId was not provided")
-    .custom(async (messageId: any) => {
+    .custom(async (messageId) => {
       const messageGet = await Message.findOne({
         _id: messageId
       });

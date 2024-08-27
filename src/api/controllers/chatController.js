@@ -1,9 +1,8 @@
-import Chat from "$lib/modals/chat";
-import Message from "$lib/modals/message";
-import User from "$lib/modals/user";
+const Chat = require("$lib/modals/chat");
+const Message = require("$lib/modals/message");
+const User = require("$lib/modals/user");
 
-
-exports.getUserChats = async (req: any, res: any) => {
+const getUserChats = async (req, res) => {
     try {
       const { userId } = req.params;
       const userGet = await Chat.find({
@@ -22,7 +21,7 @@ exports.getUserChats = async (req: any, res: any) => {
     }
   }
   
-  exports.startChat = async (req: any, res: any) => {
+  const startChat = async (req, res) => {
     try {
       const { userid } = req.body;
       const loggedUser = req.userId
@@ -48,7 +47,7 @@ exports.getUserChats = async (req: any, res: any) => {
     }
   }
   
-  exports.sendMessage = async (req: any, res: any) => {
+  const sendMessage = async (req, res) => {
     try {
       const { chatId, message } = req.body;
       const chatGet = await Chat.findOne({
@@ -71,7 +70,7 @@ exports.getUserChats = async (req: any, res: any) => {
     }
   }
   
-  exports.addReaction = async (req: any, res: any) => {
+  const addReaction = async (req, res) => {
     try {
       const { messageId, reaction } = req.body;
       const messageGet = Message.findOne({
@@ -95,7 +94,7 @@ exports.getUserChats = async (req: any, res: any) => {
     }
   }
   
-  exports.editMessage = async (req: any, res: any) => {
+  const editMessage = async (req, res) => {
     try {
       const { messageId, message } = req.body;
       const messageGet = Message.findOne({
@@ -119,7 +118,7 @@ exports.getUserChats = async (req: any, res: any) => {
     }
   }
   
-  exports.deleteMessage = async (req: any, res: any) => {
+  const deleteMessage = async (req, res) => {
     try {
       const { messageId } = req.params;
       const messageGet = await Message.deleteOne({ _id: messageId });
@@ -133,3 +132,5 @@ exports.getUserChats = async (req: any, res: any) => {
       res.status(500).json({ error: "Internal server error" });
     }
   }
+
+  module.exports = { getUserChats, startChat, sendMessage, addReaction, editMessage, deleteMessage}

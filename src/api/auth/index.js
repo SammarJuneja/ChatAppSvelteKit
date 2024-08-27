@@ -2,7 +2,7 @@ const { Router } = require("express");
 const { body, query, oneOf } = require("express-validator");
 const router = Router();
 const { login, register } = require("../controllers/authController");
-import User from "$lib/modals/user";
+const User = require("$lib/modals/user");
 
 const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?\d)(?=.*?[#?!@$%^&*-]).{8,}$/;
 
@@ -15,7 +15,7 @@ router.post(
         .isLength({ min: 3, max: 30 }).withMessage('Username must be between 3 and 30 characters long')
         .isAlphanumeric().withMessage('Username must be alphanumeric')
         .not().contains(' ').withMessage('Username cannot contain spaces')
-        .custom(async (username: any) => {
+        .custom(async (username) => {
           const user = await User.findOne({ username });
           if (user) {
             throw new Error('User already exists');
@@ -25,7 +25,7 @@ router.post(
         .trim().escape()
         .notEmpty().withMessage('E-mail is required')
         .isEmail().withMessage('Invalid E-mail address')
-        .custom(async (email: any) => {
+        .custom(async (email) => {
           const user = await User.findOne({ email });
           if (user) {
             throw new Error('User already exists');
@@ -53,7 +53,7 @@ router.post(
           .isLength({ min: 3, max: 30 }).withMessage('Username must be between 3 and 30 characters long')
           .isAlphanumeric().withMessage('Username must be alphanumeric')
           .not().contains(' ').withMessage('Username cannot contain spaces')
-          .custom(async (username: any) => {
+          .custom(async (username) => {
             const user = await User.findOne({ username });
             if (!user) {
               throw new Error('User doesn\'t exists');
@@ -63,7 +63,7 @@ router.post(
           .trim().escape()
           .notEmpty().withMessage('E-mail is required')
           .isEmail().withMessage('Invalid E-mail address')
-          .custom(async (email: any) => {
+          .custom(async (email) => {
             const user = await User.findOne({ email });
             if (!user) {
               throw new Error('User doesn\'t exists');

@@ -1,9 +1,8 @@
-import { signAccessToken, signRefreshToken } from "../../stores/store";
-import User from "$lib/modals/user";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+const { signAccessToken, signRefreshToken } = require("../../stores/store");
+const User = require("$lib/modals/user");
+const bcrypt = require("bcrypt");
 
-exports.login = async (req: any, res: any) => {
+const login = async (req, res) => {
     const { email, password } = req.body;
 
     if (!email && !password) {
@@ -12,7 +11,7 @@ exports.login = async (req: any, res: any) => {
         });
     }
 
-    const user: any = User.findOne({
+    const user = User.findOne({
         "email": email
     });
 
@@ -41,10 +40,10 @@ exports.login = async (req: any, res: any) => {
 }
 
 
-exports.register = async (req: any, res: any) => {
+const register = async (req, res) => {
     const { username, email, password } = req.body;
-    const emailRegex: any = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-    const passRegex: any = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?\d)(?=.*?[#?!@$%^&*-]).{8,}$/;
+    const emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+    const passRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?\d)(?=.*?[#?!@$%^&*-]).{8,}$/;
   
     if (!username || !email || !password) {
       res.status(500).json({
@@ -96,10 +95,12 @@ exports.register = async (req: any, res: any) => {
     });
   };
 
-  exports.generateRefreshToken = async (req: any, res: any) => {
+  const generateRefreshToken = async (req, res) => {
   
   };
   
-  exports.generateAccessToken = async (req: any, res: any) => {
+  const generateAccessToken = async (req, res) => {
   
   };
+
+  module.exports = { login, register, generateAccessToken, generateRefreshToken }

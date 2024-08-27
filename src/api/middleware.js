@@ -1,8 +1,8 @@
-import jwt from "jsonwebtoken";
-import { important } from "../stores/store"
-import User from "$lib/modals/user";
+const jwt = require("jsonwebtoken");
+const { important } = require("../stores/store");
+const User = require("$lib/modals/user");
 
-const authMiddleware = async (req: any, res: any, next: any) => {
+const authMiddleware = async (req, res, next) => {
     const authHeader = req.headers.authorization;
 
     if (!authHeader) {
@@ -16,7 +16,7 @@ const authMiddleware = async (req: any, res: any, next: any) => {
     }
 
     try {
-        jwt.verify(token, important.jwtAccess, async (err: any, tok: any) => {
+        jwt.verify(token, important.jwtAccess, async (err, tok) => {
             if (err) {
                 return res.status(401).json({ "error": "Invalid or expired token" });
             }

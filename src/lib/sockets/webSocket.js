@@ -1,8 +1,10 @@
 import socketConnection from "./socket";
 
-export const websocket = {
+const websocket = {
     name: "webSocket",
-    configureServer(server: any) {
+    configureServer(server) {
         socketConnection(server.httpServer);
     }
 }
+
+module.exports = websocket;
